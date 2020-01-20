@@ -1,0 +1,51 @@
+﻿@model IEnumerable<BeGlobeProject.Models.Message>
+
+@{
+    ViewBag.Title = "Inde";
+}
+
+<h2>Inde</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailAdress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MessageText)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAdress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MessageText)
+        </td>
+       
+        <td>
+           
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,66 @@
+﻿
+@model BeGlobeProject.Models.ServicesViewModel
+
+<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+    <div style="margin-top:135px;" class="mtTop container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/Home/Index">Home</a>
+                    </li>
+
+                    <li class="breadcrumb-item active">
+                        Services
+                    </li>
+                </ol>
+                <div class="divider-15 d-none d-xl-block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ls s-pt-20 s-pb-75 s-pt-lg-50 s-pb-lg-130 icon-service">
+    <div class="d-none d-lg-block divider-40"></div>
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model.Services)
+            {
+                <div class="row border-bottom c-mb-md-50">
+                    <div class="col-md-8">
+                        <div class="media">
+                            <img style="height:60px;width:70px;" src="~/Uploads/@item.Photo" alt="">
+                            <div   class="media-body">
+                                <h6 style="width:699.99px">
+                                    
+                                   
+                                        @item.Name
+                                    
+                                </h6>
+                                <p>
+                                   @item.Description
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <ul>
+                            @foreach (var branch in Model.GetServisBranches)
+                            {
+                                if (item.ID == branch.ServiceID)
+                                {
+                                    <li>@branch.Name</li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <div class="divider-100"></div>
+            }
+           
+        </div>
+    </div>
+    <div class="d-none d-lg-block divider-25"></div>
+</section>

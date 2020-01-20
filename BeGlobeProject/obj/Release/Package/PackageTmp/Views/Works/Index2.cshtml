@@ -1,0 +1,234 @@
+﻿
+@model BeGlobeProject.Models.WorkWM
+    
+        <section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+            <div style="margin-top:150px" class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="/Home/Index">Home</a>
+                            </li>
+
+                            <li class="breadcrumb-item active">
+                                Works
+                            </li>
+                        </ol>
+                        <div class="divider-15 d-none d-xl-block"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="ls s-pt-50 s-pb-130 container-px-0 gallery-tiled">
+            <div class="d-none d-lg-block divider-20"></div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="DivUpdate">
+                            <div class="row">
+                                <div class="container">
+                                    <div class="col-md-10 col-xl-10">
+                                        <div class="filters gallery-filters small-text text-lg-right">
+                                            <a href="#" data-filter="*" class="active selected">All</a>
+                                            <a href="#" data-filter=".web-design">Web Design</a>
+                                            <a href="#" data-filter=".logo-design">Logo Design</a>
+                                            <a href="#" data-filter=".advertisement">Advertisement</a>
+                                            <a href="#" data-filter=".branding">Branding</a>
+                                            <a href="#" data-filter=".design">Design</a>
+                                            <a href="#" data-filter=".photo">Photo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row isotope-wrapper masonry-layout c-gutter-0" data-filters=".gallery-filters">
+
+
+                                @foreach (var item in Model.Photos)
+                                {
+                                    if (item.WorkID == 1)
+                                    {
+                                        <div class="col-xl-4 col-sm-6 web-design">
+                                            <div class="vertical-item item-gallery content-absolute text-center ds">
+                                                <div class="item-media">
+                                                    <img src="/Images/Index/@item.ID" alt="">
+                                                    <div class="media-links">
+                                                    </div>
+                                                </div>
+                                                <div class="item-content big">
+                                                    <h6>
+                                                        @item.Title
+                                                        <br>
+                                                        @item.Description
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+
+                                }
+
+                                @foreach (var item in Model.Photos)
+                                {
+                                    if (item.WorkID == 2)
+                                    {
+                                        <div class="col-xl-4 col-sm-6  logo-design">
+                                            <div class="vertical-item item-gallery content-absolute text-center ds">
+                                                <div class="item-media">
+                                                    <img src="/Images/Index/@item.ID" alt="">
+                                                    <div class="media-links">
+                                                    </div>
+                                                </div>
+                                                <div class="item-content big">
+                                                    <h6>
+                                                        @item.Title
+                                                        <br>
+                                                        @item.Description
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    }
+
+
+                                }
+                                }
+
+
+
+                                @foreach (var item in Model.Photos)
+                                {
+                                    if (item.WorkID == 4)
+                                    {
+                                        <div class="col-xl-4 col-sm-6 branding ">
+                                            <div class="vertical-item item-gallery content-absolute text-center ds">
+                                                <div class="item-media">
+                                                    <img src="/Images/Index/@item.ID" alt="">
+                                                    <div class="media-links">
+                                                    </div>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h6>
+                                                        @item.Title
+                                                        <br>
+                                                        @item.Description
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                }
+                                @foreach (var item in Model.Photos)
+                                {
+                                    if (item.WorkID == 6)
+
+                                    {
+                                        <div class="col-xl-4 col-sm-6  photo ">
+                                            <div class="vertical-item item-gallery content-absolute text-center ds">
+                                                <div class="item-media">
+                                                    <img src="/Images/Index/@item.ID" alt="">
+                                                    <div class="media-links">
+                                                    </div>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h6>
+                                                        @item.Title
+                                                        <br>
+                                                        @item.Description
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    }
+
+                                }
+
+                                @foreach (var item in Model.Photos)
+                                {
+                                    if (item.WorkID == 3)
+                                    {
+                                        <div class="col-xl-4 col-sm-6  advertisement ">
+                                            <div class="vertical-item item-gallery content-absolute text-center ds">
+                                                <div class="item-media">
+                                                    <img src="/Images/Index/@item.ID" alt="">
+                                                    <div class="media-links">
+                                                    </div>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h6>
+                                                        @item.Title
+                                                        <br>
+                                                        @item.Description
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    }
+                                }
+                                @foreach (var item in Model.Photos)
+                                {
+                                    if (item.WorkID == 5)
+                                    {
+                                        <div class="col-xl-4 col-sm-6 design">
+                                            <div class="vertical-item item-gallery content-absolute text-center ds">
+                                                <div class="item-media">
+                                                    <img src="/Images/Index/@item.ID" alt="">
+                                                    <div class="media-links">
+                                                    </div>
+                                                </div>
+                                                <div class="item-content">
+                                                    <h6>
+                                                        @item.Title
+                                                        <br>
+                                                        @item.Description
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    }
+
+                                }
+
+
+
+
+                            </div>
+                            <!-- .isotope-wrapper-->
+                        </div>
+
+                        @{
+                            if (Model.Photos.Count < Model.PhotoCount)
+                            {
+                                <div class="row c-mt-30 c-mt-lg-0">
+                                    <div class="col-sm-12 text-center gallery-btn">
+                                        @*<a data-id="@Model.Photos.Count" id="load-btn" class="btn btn-maincolor">Load More</a>*@
+                                        @Html.ActionLink("Load More", "Load", "Works", new AjaxOptions()
+                                   {
+                                       HttpMethod = "GET",
+                                       InsertionMode = InsertionMode.Replace,
+                                       UpdateTargetId = "DivUpdate",
+
+                                   },
+                                        new { @class = "mt-5 btn btn-maincolor" })
+                                    </div>
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-lg-block divider-75"></div>
+        </section>
+    

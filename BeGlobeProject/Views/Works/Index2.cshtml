@@ -1,0 +1,60 @@
+﻿
+@model BeGlobeProject.Models.WorkWM
+
+<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+    <div style="margin-top:135px" class="mtTop container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/Home/Index">Home</a>
+                    </li>
+
+                    <li class="breadcrumb-item active">
+                        Works
+                    </li>
+                </ol>
+                <div class="divider-15 d-none d-xl-block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section style="background:none" class="ls mt-2 ms book-item  s-pb-30 s-pb-lg-25">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="divider-40"></div>
+            <div class="row c-gutter-30 c-mb-30 c-mb-lg-0 text-center book">
+                @foreach (var item in Model.Works)
+                {
+                    <div class="col-12 col-lg-4">
+                        <div style="height:450px" class="stage book-1 ls">
+                            <img style="height:100%;" src="/Home/RenderImage2/@item.ID" alt="@item.Name">
+                            <a href="/Works/WorkIndex/@item.ID">
+                                <div class="info">
+                                    <header>
+                                        <h6>
+                                            <a href="/Works/WorkIndex/@item.ID">
+                                                @item.Name
+                                            </a>
+                                        </h6>
+                                    </header>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            <div class="divider-30"></div>
+
+        </div>
+        <div class="divider-10"></div>
+    </div>
+</section>
+

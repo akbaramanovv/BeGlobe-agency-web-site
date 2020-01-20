@@ -1,0 +1,206 @@
+﻿
+<!DOCTYPE html>
+
+<html class="no-js">
+
+
+<head>
+    <title>BeGlobe Agency</title>
+    <meta charset="utf-8">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <![endif]-->
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="~/Areas/AdminPublic/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="~/Public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Public/css/animations.css">
+    <link rel="stylesheet" href="~/Public/css/font-awesome.css">
+    <link rel="stylesheet" href="~/Public/css/main.css" class="color-switcher-link">
+    <script src="~/Public/js/vendor/modernizr-2.6.2.min.js"></script>
+    <link href="~/Public/css/smartphoto.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="~/Public/js/vendor/html5shiv.min.js"></script>
+        <script src="~/Public/js/vendor/respond.min.js"></script>
+        <script src="~/Public/js/vendor/jquery-1.12.4.min.js"></script>
+    <![endif]-->
+    @RenderSection("Styles", false)
+</head>
+
+<body>
+    <!--[if lt IE 9]>
+        <div class="bg-danger text-center">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" class="color-main">upgrade your browser</a> to improve your experience.</div>
+    <![endif]-->
+
+    <div class="preloader">
+        <div class="preloader_image"></div>
+    </div>
+
+    <!-- search modal -->
+    <div class="modal" tabindex="-1" role="dialog" aria-labelledby="search_modal" id="search_modal">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="widget widget_search">
+            <form method="get" class="searchform search-form" action="http://webdesign-finder.com/">
+                <div class="form-group">
+                    <input type="text" value="" name="search" class="form-control" placeholder="Search keyword" id="modal-search-input">
+                </div>
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Unyson messages modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="messages_modal">
+        <div class="fw-messages-wrap ls p-normal">
+            <!-- Uncomment this UL with LI to show messages in modal popup to your user: -->
+            <!--
+            <ul class="list-unstyled">
+                <li>Message To User</li>
+            </ul>
+            -->
+
+        </div>
+    </div>
+    <!-- eof .modal -->
+    <!-- wrappers for visual page editor and boxed version of template -->
+    <div id="canvas">
+        <div id="box_wrapper">
+
+            <!-- template sections -->
+            <!--topline section visible only on small screens|-->
+            <div class="header_absolute s-pb-30">
+                <header style="background-color: #3d3952;" class="page_header ds">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-3 col-11">
+                                <a href="/Home/Index" class="logo text-center">
+                                    <img src="~/Public/images/logo.png" alt="">
+                                </a>
+                            </div>
+                            <div class="col-xl-8 col-lg-6 col-1 text-sm-center">
+                                <!-- main nav start -->
+                                <nav class="top-nav">
+                                    <ul class="nav sf-menu">
+
+
+                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                                            <a href="/Home/Index">Home</a>
+
+                                        </li>
+
+
+                                        <!-- blog -->
+                                        <!-- gallery -->
+                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index2" ? "active" : "")">
+                                            <a href="/Works/Index2">Works</a>
+
+                                        </li>
+                                       
+                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active" : "")">
+                                            <a href="/Home/About">About</a>
+                                        </li>
+                                        <!-- eof Gallery -->
+                                        <!-- eof blog -->
+
+                                        <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")">
+                                            <a href="/Home/Contact">Contacts</a>
+
+                                        </li>
+                                        <!-- eof contacts -->
+                                        <!-- contacts -->
+
+                                    </ul>
+
+
+                                </nav>
+                                <!-- eof main nav -->
+                            </div>
+                            <div class="col-xl-2 col-lg-3 text-lg-left text-xl-right d-none d-lg-block">
+                                <div class=" row header_phone">
+                                    <h6  style="display:flex;align-items:center;font-size:19px">
+                                        <span>(+994)55</span> 000-00-00
+                                    </h6>
+                                  
+                                </div>
+                            </div>
+                            <!-- Search Box -->
+                            <!-------------------------------------------------------------------------------------------------->
+                            <!-- <div class="search-box">
+                                <input type="text" name="search" placeholder="search keyword" class="search-text">
+                                <a href="#" class="search-btn">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- header toggler -->
+                    <span class="toggle_menu">
+                        <span></span>
+                    </span>
+                </header>
+            </div>
+            <span class="toggle_menu_side header-slide">
+                <span></span>
+            </span>
+
+
+            @RenderBody()
+
+            <footer style="margin-top:30px" class=" page_footer corner-footer ds s-pt-30 s-pb-0 s-pb-lg-10 s-pb-xl-50 c-gutter-60 s-parallax">
+
+                <div class=" container py-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="divider-20 d-none d-xl-block"></div>
+                            <div class="col-md-12 mt-4 text-center animate" data-animation="fadeInUp">
+                                <img style="width: 208.2px;height: 48.3px; margin-top:-80px" class="margin-negative" src="~/Public/images/logo.png" alt="">
+                                <div class="widget m-0 widget_social_buttons">
+                                    <a href="https://www.facebook.com/beglobeagency" class="fa fa-facebook color-icon" title="facebook"></a>
+                                    <a href="https://www.twitter.com/#" class="fa fa-twitter color-icon" title="twitter"></a>
+                                    <a href="https://www.youtube.com/#" class="fa fa-youtube-play color-icon" title="youtube-play"></a>
+                                    <a href="/Admin/AdminHome/Index" class="far fa-sign-in color-icon" title="linkedin"></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+
+            <section class="page_copyright light-copy cs s-py-20 s-py-lg-5 s-parallax copyright">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="divider-20 d-none d-lg-block"></div>
+                        <div class="col-md-12 text-center">
+                            <p>
+                                &copy; Copyright
+                                <span class="copyright_year">2018</span> All Rights Reserved
+                            </p>
+                        </div>
+                        <div class="divider-20 d-none d-lg-block"></div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+        <!-- eof #box_wrapper -->
+    </div>
+    <!-- eof #canvas -->
+
+    <script src="~/Public/js/compressed.js"></script>
+    <script src="~/Public/js/main.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+    <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.11.1/additional-methods.js"></script>
+    <script src="~/Public/js/smartphoto.min.js"></script>
+
+</body>
+
+
+</html>

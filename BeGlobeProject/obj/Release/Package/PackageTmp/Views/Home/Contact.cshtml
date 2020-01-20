@@ -1,0 +1,219 @@
+﻿@model BeGlobeProject.Models.ContactWM
+<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+    <div style="margin-top:150px" class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/Home/Index">Home</a>
+                    </li>
+
+                    <li class="breadcrumb-item active">
+                        Contact
+                    </li>
+                </ol>
+                <div class="divider-15 d-none d-xl-block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="s-pt-50">
+    <div class="divider-60 d-none d-xl-block"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mapouter">
+                    <div class="gmap_canvas"><iframe width="1200" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=beglobe&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.bitgeeks.net/divi-discount-elegant-themes-coupon/">divi discount code</a></div>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 500px;
+                            width: 1200px;
+                        }
+
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            height: 500px;
+                            width: 1200px;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ls s-pt-30 s-pt-lg-75 s-pb-130 contact4">
+    <div class="container">
+        <div class="row c-gutter-60">
+
+            <div class="divider-40 d-none d-xl-block"></div>
+
+            <div class="col-lg-8">
+                @*@using (Html.BeginForm("Contact","home",FormMethod.Post))
+                    {
+                        <input name="FullName"/>
+                        <input type="submit" value="send"/>
+                    }*@
+                @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { id = "contact-form", @class = "contact-form c-mb-20 c-gutter-15", enctype = "multipart/form-data" }))
+                {
+                    <div class="row">
+
+
+                        <div class="col-sm-12">
+                            <h4>Contact Form</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="form-group has-placeholder">
+                                <label for="name">
+                                    Full Name
+                                    <span class="required">*</span>
+                                </label>
+                                <input aria-required="true" id="name" class="my-1 form-control" placeholder="Full Name" name="FullName" />
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group has-placeholder">
+                                <label for="phone">
+                                    Phone
+                                    <span class="required">*</span>
+                                </label>
+                                <input aria-required="true" class="my-1 form-control" placeholder="Phone" id="phone" name="Phone" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="form-group has-placeholder">
+                                <label for="email">
+                                    Email address
+                                    <span class="required">*</span>
+                                </label>
+                                <input id="EmailAdress" aria-required="true" placeholder="EmailAdress" class="my-1 form-control" name="EmailAdress" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-12">
+
+                            <div class="form-group has-placeholder">
+                                <label for="message">Message</label>
+                                <textarea aria-required="true" rows="6" cols="45" name="MessageText" id="Messages.MessageText" class="my-1 form-control" placeholder="Your Message"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="mt-2 form-group has-placeholder">
+                            <input type="submit" value="Send message" />
+
+
+                        </div>
+                    </div>
+                }
+
+
+
+            </div>
+            <!--.col-* -->
+            <div class="col-lg-4">
+                <div>
+                    <h4 class="header">
+                        Contact Info
+                    </h4>
+
+                    <div class="media mb-10">
+                        <div class="icon-styled color-main fs-16">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+
+                        <div class="media-body">
+                            <p>
+                                @Model.Contacts.Adress
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="media mb-10">
+                        <div class="icon-styled color-main fs-16">
+                            <i class="fa fa-phone"></i>
+                        </div>
+
+                        <div class="media-body">
+                            <p>
+                                @Model.Contacts.Phone
+
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="media mb-40">
+                        <div class="icon-styled color-main fs-16">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+
+                        <div class="media-body">
+                            <p class="color-dark">
+                                @Model.Contacts.Email
+                            </p>
+                        </div>
+                    </div>
+
+                    <h4>Open Hours</h4>
+
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="icon-styled color-main fs-16">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    Weekdays
+                                </td>
+                                <td class="color-dark">10:00-18:00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="icon-styled color-main fs-16">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    Saturday
+                                </td>
+                                <td class="color-dark">Closed</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="icon-styled color-main fs-16">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    Sunday
+                                </td>
+                                <td class="color-dark">Closed</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--.col-* -->
+            <div class="divider-60 d-none d-xl-block"></div>
+        </div>
+    </div>
+</section>
+
+

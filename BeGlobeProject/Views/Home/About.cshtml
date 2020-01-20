@@ -1,0 +1,147 @@
+﻿@model BeGlobeProject.Models.AboutWM
+
+<section class="page_title ls s-py-50 corner-title ls invise overflow-visible">
+    <div style="margin-top:135px" class="mtTop container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="/Home/Index">Home</a>
+                    </li>
+
+                    <li class="breadcrumb-item active">
+                        About
+                    </li>
+                </ol>
+                <div class="divider-15 d-none d-xl-block"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="s-pt-30 s-pt-lg-50 ls about">
+    <div class="divider-60 d-none d-xl-block"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="main-content text-center">
+                    <h5>
+                        "
+
+                        We love what we do and we love helping others succeed at what they love to do
+
+                        "
+                    </h5>
+                    <i class="rt-icon2-user"></i>
+                    <p>
+                        Gregory F. Parrino,
+                        <span class="link-a">
+                            CEO
+                        </span>
+                    </p>
+
+                    <div class="divider-10 d-none d-xl-block"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="s-pt-30 s-pb-3 service-item2 servisler ls animate" id="services" data-animation="fadeInUp">
+    <div class="container">
+        <div class="row c-mb-50 c-mb-md-60">
+            <div class="d-none d-lg-block divider-20"></div>
+
+            @foreach (var servis in Model.Services)
+            {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="vertical-item text-center">
+                        <div class="item-media">
+                            <img src="~/Uploads/@servis.Photo" alt="">
+                        </div>
+                        <div class="item-content">
+                            <h6>
+                                @servis.Name
+                            </h6>
+
+                            <p>
+                                @servis.Title
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <!-- .col-* -->
+            <!-- .col-* -->
+        </div>
+        <div class="pink-line text-center">
+            <img src="~/Public/img/pink_line_big.png" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="page_slider team_slider mt-3" id="team">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="shortcode-team-slider main-team">
+                <h3 class="slider-title">Team</h3>
+                <div class="flexslider team-slider" data-nav="false" data-dots="true">
+                    <ul class="slides">
+                        <li class="ls">
+                            <img src="~/Public/images/team/team_slide_01.jpg" alt="">
+                        </li>
+
+                        @foreach (var item in Model.Employees)
+                        {
+                            <li class="ls">
+                                <img src="~/Uploads/@item.Photo" alt="">
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <!-- eof flexslider -->
+                <div class="flexslider-controls">
+                    <ul class="flex-control-nav-1">
+                        <li class="menu_item flex-active">
+                            Gregory F. Parrino
+                            <span class="position">CEO</span>
+                            <span class="team-social-icons">
+                                @*<span class="social-icons">
+                                        <a href="#" class="fa fa-facebook color-icon border-icon rounded-icon" title="facebook"></a>
+                                        <a href="#" class="fa fa-twitter color-icon border-icon rounded-icon" title="twitter"></a>
+                                        <a href="#" class="fa fa-google color-icon border-icon rounded-icon" title="google"></a>
+                                    </span>*@
+                            </span>
+                        </li>
+                        @foreach (var item in Model.Employees)
+                        {
+                            <li class="menu_item">
+                                @item.EmployeeName  @item.Surname
+                                <span class="position">@item.Positionn.Name</span>
+                                <span class="team-social-icons">
+                                    @*<span class="social-icons">
+                                            <a href="#" class="fa fa-facebook color-icon border-icon rounded-icon" title="facebook"></a>
+                                            <a href="#" class="fa fa-twitter color-icon border-icon rounded-icon" title="twitter"></a>
+                                            <a href="#" class="fa fa-google color-icon border-icon rounded-icon" title="google"></a>
+                                        </span>*@
+                                </span>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="mt-4 pink-line text-center">
+        <img src="~/Public/img/pink_line_big.png" alt="">
+    </div>
+</section>
+
+
+

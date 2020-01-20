@@ -1,0 +1,73 @@
+﻿@model BeGlobeProject.Models.WorkWM
+@{
+    ViewBag.Title = "WorkIndex";
+}
+
+<div style="width:100%;height:auto;" class="">
+    <img style="margin-top:122px ;width:100%" class="work-image" src="/home/RenderImage3/@Model.Work.ID" />
+</div>
+<section class="s-pt-30 s-pt-lg-50 s-pt-xl-25 ls about-home" id="about">
+    <div class="divider-5 d-none d-xl-block"></div>
+    <div class="text-center container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <div class="main-content text-center">
+                    <div class="img-wrap text-center">
+                        <img src="~/Public/img/vertical_line.png" alt="">
+                        <div class="divider-35"></div>
+                    </div>
+                    <h5>
+                        We are the one of the most effective Web Design Companies
+                    </h5>
+                    <p>
+                        Getting online is easy. Succeeding online is a different story. You’ll need more than just a beautiful website to stand out these days.
+                        <strong>Online marketing solutions.</strong> Conversion-based web design coupled with a lead generating marketing plan, your online success is inevitable.
+                    </p>
+                    <div class="divider-30"></div>
+                    <div class="img-wrap text-center">
+                        <img src="~/Public/img/vertical_line.png" alt="">
+                    </div>
+                    <div>
+                        <div class="divider-40"></div>
+                        <div class="divider-40"></div>
+                    </div>
+
+                    <div class="divider-10 d-none d-xl-block"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider-10 d-block d-sm-none"></div>
+</section>
+
+<section style="background:none" class="ls ms book-item mt-1 s-pb-30 s-pb-lg-25">
+  
+    <div class="container">
+        <div class="row">
+
+            <div class="divider-40"></div>
+            <div class="row c-gutter-30 c-mb-30 c-mb-lg-0 text-center book">
+                @foreach (var item in Model.Photos)
+                {
+                    <div class="col-12 col-lg-4">
+                        <a href="/Works/RenderImage/@item.ID" target="_blank" class="js-smartPhoto" data-caption="Caption @item.ID" data-id="id-@item.ID">
+                            <div style="height:375px" ls">
+                                <img style="height:100% ;width:100%" src="/Works/RenderImage/@item.ID" alt="@item.Title">
+
+
+
+                            </div>
+                        </a>
+
+
+
+                    </div>
+                }
+
+            </div>
+            <div class="divider-30"></div>
+
+        </div>
+        <div class="divider-10"></div>
+    </div>
+</section>
